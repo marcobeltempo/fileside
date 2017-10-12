@@ -1,0 +1,38 @@
+{
+  "name": "fileside",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node ./bin/www",
+    "devstart": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "filesize": "^3.5.10",
+    "morgan": "~1.9.0",
+    "pug": "^2.0.0-rc.4",
+    "serve-favicon": "~2.4.5"
+  },
+  "description": "Application to retrieve specific details about files on disk.",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcobeltempo/fileside.git"
+  },
+  "keywords": [
+    "osd600",
+    "node",
+    "file extractor"
+  ],
+  "author": "Marco Beltempo",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/marcobeltempo/fileside/issues"
+  },
+  "homepage": "https://github.com/marcobeltempo/fileside#readme"
+}
