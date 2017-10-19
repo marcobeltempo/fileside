@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
           'Directory: ' + path.win32.dirname(file), //gets the files directroy 
           'Filename: ' + path.win32.basename(file), //gets file name
           'Extension: ' + path.win32.extname(file), //gets file extension
-          'Size:' + filesize(stats["size"]),        //gets file size and converst to readable bytes
+          'Size:' + stats.size + ' Bytes' + ' ' + getKilobytes(stats.size) + ' Kilobytes',        //gets file size and converst to readable bytes
           'File contents: ' + data                  //contents in the file
         ]
 
@@ -40,5 +40,13 @@ router.get('/', function (req, res, next) {
   });
 
 });
+
+function getKilobytes(bytes) {
+  
+  var convertToKiloBytes = bytes / 1024
+  var kilobytes = convertToKiloBytes.toFixed(2)
+
+  return kilobytes;
+}
 
 module.exports = router;
