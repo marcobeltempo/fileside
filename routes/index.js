@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require("fs");
 var filesize = require("filesize");
 var path = require("path");
-var file = "./test_files/sample_file.txt";
+var file = "../__tests_/text_files/sample_file.txt";
 
 /* GET home page. */
 router.get("/", function(req, res, next) {
@@ -48,4 +48,4 @@ function getKilobytes(bytes) {
   return kilobytes;
 }
 
-module.exports = router;
+module.exports = { router, getKilobytes };

@@ -5,7 +5,8 @@
     "start": "node ./bin/www",
     "devstart": "nodemon ./bin/www",
     "test": "eslint .",
-    "test:lint:fix": "eslint . --fix"
+    "test:lint:fix": "eslint . --fix",
+    "file-tool-test": "jest"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -22,6 +23,7 @@
   "devDependencies": {
     "eslint": "^4.11.0",
     "eslint-plugin-prettier": "^2.3.1",
+    "jest": "^21.2.1",
     "nodemon": "^1.12.1",
     "prettier": "^1.8.2"
   },
