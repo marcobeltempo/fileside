@@ -38,7 +38,7 @@ module.exports = {
 
   /**
    * Hash a given file
-   * crypto function implemented from 
+   * crypto function implemented from
    * @param {string} filePath - The path to a valid file name.
    * @param {string} algorithm - Acceots "sha1", "md5", "sha256", "sha512".
    * @return {string} The file hash
