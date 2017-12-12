@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 var fileside = require("../src/fileside.js");
 
-var testFilePath = "./test_files/test_file.txt";
+var testFilePath = "./test/test_file.txt";
 var algorithms = ["sha1", "md5", "sha256", "sha512"];
 var arr1 = [];
 /* GET home page. */

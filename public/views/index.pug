@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1 #{title} Results
+  div#results
+    div#output
+      each stat in stats
+        p#fileStats=stat
+
+      
