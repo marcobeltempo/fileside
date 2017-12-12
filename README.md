@@ -53,7 +53,7 @@ Setup fileside on your local machine
 ## Running the Test Suite
 * `npm start` - launches a loalhost server and analayze and display the results of test_file.txt
 * `npm test` - performs an eslint + prettier and jest tests
-* `test:lint:fix` - automatically fix any styling and validation errors. (Double check your changes)
+* `npm run test:lint:fix` - automatically fix any styling and validation errors. (Double check your changes)
 
 ## Contributing
 
