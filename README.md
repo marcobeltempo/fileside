@@ -3,31 +3,32 @@
 
 A NodeJS library designed to process local file size strings and hash a file. As of now fileside can only process local files but look to expand to additional features such as drag and drop support.
 
-This Node.JS application simple analyzes a local file from the **/test_files** and displays the following information to the user:
+This Node.JS application simple analyzes a local file from the and displays the following information to the user:
 * Filesize in kilobytes
 * Filesize in Bytes
 * Hash using sha1, md5, sha256, sha512
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The following demonstrates different uses of filesides functions and instructions to get you setup for development and testing. 
 
 ### Examples
 
 ```javascript
-var fileside = require(filePath);
+var fileside = require(fileside);
+var testFile = "../tets_files/test_file.txt";
 
-fs.readFile(testFilePath, fileside.handleFile);
+fs.readFile(testFile, fileside.handleFile);
 
-fileside.getFileKb(filePath, function(err, result) {
+fileside.getFileKb(testFile, function(err, result) {
   console.log(result); //"0.04 Kilobytes"
 });
 
-fileside.getFileBytes(filePath, function(err, result) {
+fileside.getFileBytes(testFile, function(err, result) {
   console.log(result); //"40 Bytes"
 });
 
-fileside.fileHash(filePath, "sha256", function(err, result) {
+fileside.fileHash(testFile, "sha256", function(err, result) {
   console.log(result); //"cd8d9bb6e93cbca88f4218e6d0124821"
 });
 ```
@@ -37,7 +38,10 @@ fileside.fileHash(filePath, "sha256", function(err, result) {
 * node v8.9 and up
 * npm 5.5 and up
 
-### Installing
+### Moodule Install
+1. `npm install fileside` 
+
+### Dev-Install
 Setup fileside on your local machine
 
 1. `git clone https://github.com/marcobeltempo/fileside`
@@ -46,10 +50,10 @@ Setup fileside on your local machine
 4. `npm start` //(optional) This will load a test server to view the result sof a test .txt file
 5. (optional) navigate to (http://localhost:3000/)
 
-## Running Tests
-
-* `npm test` will perform an eslint and jest tests
-* `test:lint:fix` should fix any styling and validation errors automatically. (Double check your changes)
+## Running the Test Suite
+* `npm start` - launches a loalhost server and analayze and display the results of test_file.txt
+* `npm test` - performs an eslint + prettier and jest tests
+* `test:lint:fix` - automatically fix any styling and validation errors. (Double check your changes)
 
 ## Contributing
 
@@ -67,7 +71,7 @@ This project is licensed under the BSD 2-Clause License - see the [LICENSE.md](L
 
 ## Social
 
-[![Web Icon](https://cdn1.iconfinder.com/data/icons/CrystalClear/32x32/apps/package_network.png)](mailto:marco.beltempo@gmail.com)
+[![Web Icon](https://cdn1.iconfinder.com/data/icons/CrystalClear/32x32/apps/package_network.png)](https://www.marcobeltempo.com/)
 [![GitHub Icon](https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-social-github-32.png)](https://github.com/marcobeltempo)
 [![Twitter Icon](https://cdn3.iconfinder.com/data/icons/free-social-icons/67/twitter_circle_color-32.png)](https://twitter.com/marco_beltempo)
 [![LinkedIn Icon](https://cdn3.iconfinder.com/data/icons/free-social-icons/67/linkedin_circle_color-32.png)](https://www.linkedin.com/in/marcobeltempo/)
