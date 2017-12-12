@@ -2,8 +2,8 @@ var fs = require("fs");
 var express = require("express");
 var router = express.Router();
 var fileside = require("../src/fileside.js");
-var testFilePath = "./test_files/sample_file.txt";
 
+var testFilePath = "./test_files/test_file.txt";
 var algorithms = ["sha1", "md5", "sha256", "sha512"];
 
 /* GET home page. */
@@ -32,7 +32,6 @@ router.get("/", function(req, res, next) {
       console.log(result);
     });
   }
-
 });
 
 module.exports = router;

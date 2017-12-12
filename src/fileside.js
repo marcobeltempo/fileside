@@ -2,11 +2,15 @@ var fs = require("fs");
 var crypto = require("crypto");
 
 module.exports = {
-    
   handleFile: function(error, file) {
     if (error) return console.error("Uhoh, there was an error", error);
   },
 
+  /**
+   * Get the size of a file in bytes
+   * @param {string} filePath - The path to a valid file name.
+   * @return {string} ex. "43 Bytes"
+   */
   getFileBytes: function(filePath, callback) {
     fs.stat(filePath, function(err, stats) {
       if (err) {
@@ -17,6 +21,11 @@ module.exports = {
     });
   },
 
+  /**
+   * Get the size of a file in kilobytes
+   * @param {string} filePath - The path to a valid file name.
+   * @return {string} ex. "0.04 Kilobytes"
+   */
   getFileKb: function(filePath, callback) {
     fs.stat(filePath, function(err, stats) {
       if (err) {
@@ -27,6 +36,13 @@ module.exports = {
     });
   },
 
+  /**
+   * Hash a given file
+   * crypto function implemented from 
+   * @param {string} filePath - The path to a valid file name.
+   * @param {string} algorithm - Acceots "sha1", "md5", "sha256", "sha512".
+   * @return {string} The file hash
+   */
   fileHash: function(filePath, algorithm, callback) {
     var shasum = crypto.createHash(algorithm);
     var filename = filePath,
@@ -38,10 +54,7 @@ module.exports = {
     // making digest
     s.on("end", function() {
       var hash = shasum.digest("hex");
-      callback(
-        null,
-        "Filename: " + filename + "  Algorithm: " + algorithm + " Hash: " + hash
-      );
+      callback(null, hash);
     });
   }
 };

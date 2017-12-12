@@ -1,17 +1,36 @@
-# fileside
 
-It is a NodeJS library designed to process local file information retrieve file properties in readable string format. As of now fileside can only process local files but look to expand to additional features such as drag and drop support.
+![fileside Logo](https://www.marcobeltempo.com/filesidelogo/)
+
+A NodeJS library designed to process local file size strings and hash a file. As of now fileside can only process local files but look to expand to additional features such as drag and drop support.
 
 This Node.JS application simple analyzes a local file from the **/test_files** and displays the following information to the user:
-* Directory of the file
-* Filename
-* File extension
-* File size
-* File contents
+* Filesize in kilobytes
+* Filesize in Bytes
+* Hash using sha1, md5, sha256, sha512
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+###Examples
+
+```javascript
+var fileside = require(filePath);
+
+fs.readFile(testFilePath, fileside.handleFile);
+
+fileside.getFileKb(filePath, function(err, result) {
+  console.log(result); //"0.04 Kilobytes"
+});
+
+fileside.getFileBytes(filePath, function(err, result) {
+  console.log(result); //"40 Bytes"
+});
+
+fileside.fileHash(filePath, "sha256", function(err, result) {
+  console.log(result); //"cd8d9bb6e93cbca88f4218e6d0124821"
+});
+```
 
 ### Prerequisites
 
@@ -19,47 +38,29 @@ These instructions will get you a copy of the project up and running on your loc
 * npm 5.5 and up
 
 ### Installing
+
 Setup fileside on your local machine
 
 1. `git clone https://github.com/marcobeltempo/fileside`
 2. `cd fileside`
 3. `npm install`
-4. `npm run` 
-5. `npm devstart` (allows for live edits without have to restart the server)
-6. navigate to (http://localhost:3000/)
+4. `npm start` //(optional) This will load a test server to view the result sof a test .txt file
+5. (optional) navigate to (http://localhost:3000/)
 
-## Running the tests
+## Running Tests
 
-Explain how to run the automated tests for this system
-
-### npm Scripts
-
-This command will build and execute the program 
-```
-npm start
-```
-
-### Styling Tests
-Check for any JavaScript formatting errors
-```
-npm test
-```
-
-Fix any formatting and styling errors
-```
-npm run test:lint:fix
-```
+* `npm test` will perform an eslint and jest tests
+* `test:lint:fix` should fix any styling and validation errors automatically. (Double check your changes)
 
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/marcobeltempo/fileside/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
-
 ## Authors
 
 * **Marco Beltempo** - *Initial work* - [fileside](https://github.com/marcobeltempo/fileside)
 
-See also the list of [contributors](https://github.com/marcobeltempo/fileside/contributors) who participated in this project.
+See the list of [contributors](https://github.com/marcobeltempo/fileside/contributors) who have participated in this project.
 
 ## License
 

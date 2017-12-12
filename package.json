@@ -1,10 +1,12 @@
 {
   "name": "fileside",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
-    "start": "node bin/www",
     "devstart": "nodemon ./bin/www",
-    "test": "eslint .",
+    "start": "node bin/www",
+    "test": "run-p -n test:lint test:jest",
+    "test:jest": "jest",
+    "test:lint": "eslint .",
     "test:lint:fix": "eslint . --fix"
   },
   "dependencies": {
@@ -22,7 +24,9 @@
   "devDependencies": {
     "eslint": "^4.11.0",
     "eslint-plugin-prettier": "^2.3.1",
+    "jest": "^21.2.1",
     "nodemon": "^1.12.1",
+    "npm-run-all": "^4.1.2",
     "prettier": "^1.8.2"
   },
   "repository": {
