@@ -1,5 +1,5 @@
 
-![fileside Logo](https://www.marcobeltempo.com/filesidelogo/)
+![fileside Logo](https://www.marcobeltempo.com/wp-content/uploads/2017/12/filesidelogo.png)
 
 A NodeJS library designed to process local file size strings and hash a file. As of now fileside can only process local files but look to expand to additional features such as drag and drop support.
 
@@ -12,7 +12,7 @@ This Node.JS application simple analyzes a local file from the **/test_files** a
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-###Examples
+### Examples
 
 ```javascript
 var fileside = require(filePath);
