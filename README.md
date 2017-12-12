@@ -38,7 +38,6 @@ fileside.fileHash(filePath, "sha256", function(err, result) {
 * npm 5.5 and up
 
 ### Installing
-
 Setup fileside on your local machine
 
 1. `git clone https://github.com/marcobeltempo/fileside`
