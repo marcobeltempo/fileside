@@ -5,7 +5,7 @@ var fileside = require("../src/fileside.js");
 
 var testFilePath = "./test_files/test_file.txt";
 var algorithms = ["sha1", "md5", "sha256", "sha512"];
-
+var arr1 = [];
 /* GET home page. */
 router.get("/", function(req, res, next) {
   fs.readFile(testFilePath, fileside.handleFile);
@@ -14,6 +14,7 @@ router.get("/", function(req, res, next) {
     if (err) {
       throw err;
     }
+    arr1.push(result);
     console.log(result);
   });
 
@@ -21,17 +22,25 @@ router.get("/", function(req, res, next) {
     if (err) {
       throw err;
     }
+    arr1.push(result);
     console.log(result);
   });
 
-  for (var i = 0, len = algorithms.length; i < len; i++) {
-    fileside.fileHash(testFilePath, algorithms[i], function(err, result) {
+  algorithms.forEach(function(value) {
+    fileside.fileHash(testFilePath, value, function(err, result) {
       if (err) {
         throw err;
       }
-      console.log(result);
+      arr1.push(value + ": " + result);
+      console.log(value + ": " + result);
     });
-  }
+  });
+
+  res.render("index", {
+    title: "Fileside",
+    stats: arr1
+  });
+  arr1 = [];
 });
 
-module.exports = { router, getKilobytes };
+module.exports = router;
