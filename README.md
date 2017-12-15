@@ -16,7 +16,7 @@ The following demonstrates different uses of filesides functions and instruction
 
 ```javascript
 var fileside = require(fileside);
-var testFile = "../tets_files/test_file.txt";
+var testFile = "./test/test_file.txt";
 
 fs.readFile(testFile, fileside.handleFile);
 

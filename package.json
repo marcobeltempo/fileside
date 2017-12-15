@@ -1,6 +1,7 @@
 {
   "name": "fileside",
   "version": "0.0.3",
+  "bin": "./src",
   "scripts": {
     "devstart": "nodemon ./bin/www",
     "start": "node bin/www",
