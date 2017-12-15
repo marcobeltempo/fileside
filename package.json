@@ -1,6 +1,6 @@
 {
   "name": "fileside",
-  "version": "0.0.4",
+  "version": "0.1.1",
   "scripts": {
     "start": "node ./src/fileside",
     "start:dev": "node ./bin/www",
@@ -27,6 +27,7 @@
     "prettier": "^1.8.2",
     "pug": "^2.0.0-rc.4"
   },
+  "tonicExampleFilename": "./test/example.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/marcobeltempo/fileside.git"
