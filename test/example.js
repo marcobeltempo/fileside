@@ -16,7 +16,7 @@ fileside.fileHash(testFile, "md5", function(err, result) {
 });
 
 fileside.fileHash(testFile, "sha1", function(err, result) {
-  console.log("sha1: ", result);
+  console.log("sha1: " + result);
 });
 
 fileside.fileHash(testFile, "sha256", function(err, result) {
