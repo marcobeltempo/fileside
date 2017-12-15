@@ -6,7 +6,7 @@ A NodeJS library designed to process local file size strings and hash a file. As
 This Node.JS application simple analyzes a local file from the and displays the following information to the user:
 * Filesize in kilobytes
 * Filesize in Bytes
-* Hash using sha1, md5, sha256, sha512
+* Hash using md5, sha1, sha256, sha512
 
 ## Getting Started
 
@@ -15,22 +15,46 @@ The following demonstrates different uses of filesides functions and instruction
 ### Examples
 
 ```javascript
-var fileside = require(fileside);
-var testFile = "./test/test_file.txt";
+var fileside = require("fileside");
+var testFile = "./test_file.txt";
 
-fs.readFile(testFile, fileside.handleFile);
+fileside.handleFile(testFile);
 
 fileside.getFileKb(testFile, function(err, result) {
-  console.log(result); //"0.04 Kilobytes"
+  console.log(result); //0.04 Kilobytes
 });
 
 fileside.getFileBytes(testFile, function(err, result) {
-  console.log(result); //"40 Bytes"
+  console.log(result); //40 Bytes
+});
+
+fileside.fileHash(testFile, "md5", function(err, result) {
+  console.log("md5: ", result);
+});
+
+fileside.fileHash(testFile, "sha1", function(err, result) {
+  console.log("sha1: ", result);
 });
 
 fileside.fileHash(testFile, "sha256", function(err, result) {
-  console.log(result); //"cd8d9bb6e93cbca88f4218e6d0124821"
+  console.log("sha256: ", result);
 });
+
+fileside.fileHash(testFile, "sha512", function(err, result) {
+  console.log("sha256: ", result); 
+});
+
+
+/*
+OUTPUT
+0.04 Kilobytes
+43 Bytes
+md5:  9e107d9d372bb6826bd81d3542a419d6
+sha1:  2fd4e1c67a2d28fced849ee1bb76e7391b93eb12
+sha256:  d7a8fbb307d7809469ca9abcb0082e4f8d5651e46d3cdb762d02d0bf37c9e592
+sha256:  07e547d9586f6a73f73fbac0435ed76951218fb7d0c8d788a309d785436bbb642e93a252a954f23912547d1e8a3b5ed6e1bfd7097821233fa0538f3db854fee6
+*/
+
 ```
 
 ### Prerequisites
@@ -47,11 +71,11 @@ Setup fileside on your local machine
 1. `git clone https://github.com/marcobeltempo/fileside`
 2. `cd fileside`
 3. `npm install`
-4. `npm start` //(optional) This will load a test server to view the result sof a test .txt file
-5. (optional) navigate to (http://localhost:3000/)
+4. `npm run start:dev` //(optional) This will load a test server to view the results of a test .txt file
+5.  Navigate to http://localhost:3000/ to view the results
 
 ## Running the Test Suite
-* `npm start` - launches a loalhost server and analayze and display the results of test_file.txt
+* `npm start:dev` - launches a loalhost server and analayze and display the results of test_file.txt
 * `npm test` - performs an eslint + prettier and jest tests
 * `npm run test:lint:fix` - automatically fix any styling and validation errors. (Double check your changes)
 
