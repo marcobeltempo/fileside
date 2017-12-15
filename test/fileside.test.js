@@ -1,5 +1,5 @@
 var fileSide = require("../src/fileside.js");
-var testFilePath = "./test/test_file.txt";
+var testFilePath = __dirname + "/test_file.txt";
 
 test("Get a filesize in kilobytes", function(done) {
   fileSide.getFileKb(testFilePath, function(err, result) {

@@ -1,0 +1,8 @@
+.npm
+.travis.yml
+app.js
+bin/
+CONTRIBUTING.md
+public/
+README.md
+routes/

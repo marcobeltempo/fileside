@@ -1,5 +1,5 @@
 var fileSide = require("../src/fileside.js");
-var testFilePath = "./test_files/test_file.txt";
+var testFilePath = __dirname + "/test_file.txt";
 
 test("Hash a file using sha1", function(done) {
   fileSide.fileHash(testFilePath, "sha1", function(err, result) {
