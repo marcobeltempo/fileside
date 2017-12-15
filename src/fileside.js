@@ -1,9 +1,16 @@
+"use strict";
+
 var fs = require("fs");
 var crypto = require("crypto");
 
 module.exports = {
-  handleFile: function(error, file) {
-    if (error) return console.error("Uhoh, there was an error", error);
+  handleFile: function(file) {
+    fs.readFile(file, (err, data) => {
+      if (err) {
+        console.error("Uhoh, there was an error trying to read the file.");
+        throw err;
+      }
+    });
   },
 
   /**
@@ -14,6 +21,7 @@ module.exports = {
   getFileBytes: function(filePath, callback) {
     fs.stat(filePath, function(err, stats) {
       if (err) {
+        console.error("Uhoh, there was an error trying to getFileBytes.");
         throw err;
       }
       let byteString = stats.size + " Bytes";
@@ -29,6 +37,7 @@ module.exports = {
   getFileKb: function(filePath, callback) {
     fs.stat(filePath, function(err, stats) {
       if (err) {
+        console.error("Uhoh, there was an error trying to getFileKb.");
         throw err;
       }
       let kilobyteString = (stats.size / 1024).toFixed(2) + " Kilobytes";

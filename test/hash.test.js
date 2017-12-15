@@ -1,18 +1,18 @@
 var fileSide = require("../src/fileside.js");
 var testFilePath = __dirname + "/test_file.txt";
 
-test("Hash a file using sha1", function(done) {
-  fileSide.fileHash(testFilePath, "sha1", function(err, result) {
-    expect(err).toBeFalsy();
-    expect(result).toMatch("2fd4e1c67a2d28fced849ee1bb76e7391b93eb12");
-    done();
-  });
-});
-
 test("Hash a file using md5", function(done) {
   fileSide.fileHash(testFilePath, "md5", function(err, result) {
     expect(err).toBeFalsy();
     expect(result).toMatch("9e107d9d372bb6826bd81d3542a419d6");
+    done();
+  });
+});
+
+test("Hash a file using sha1", function(done) {
+  fileSide.fileHash(testFilePath, "sha1", function(err, result) {
+    expect(err).toBeFalsy();
+    expect(result).toMatch("2fd4e1c67a2d28fced849ee1bb76e7391b93eb12");
     done();
   });
 });
@@ -27,7 +27,7 @@ test("Hash a file using sha256", function(done) {
   });
 });
 
-test("Hash a file using sha256", function(done) {
+test("Hash a file using sha512", function(done) {
   fileSide.fileHash(testFilePath, "sha512", function(err, result) {
     expect(err).toBeFalsy();
     expect(result).toMatch(

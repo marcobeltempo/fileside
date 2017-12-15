@@ -4,11 +4,12 @@ var router = express.Router();
 var fileside = require("../src/fileside.js");
 
 var testFilePath = "./test/test_file.txt";
-var algorithms = ["sha1", "md5", "sha256", "sha512"];
+var algorithms = ["md5", "sha1", "sha256", "sha512"];
 var arr1 = [];
+
 /* GET home page. */
 router.get("/", function(req, res, next) {
-  fs.readFile(testFilePath, fileside.handleFile);
+  fileside.handleFile(testFilePath);
 
   fileside.getFileKb(testFilePath, function(err, result) {
     if (err) {
