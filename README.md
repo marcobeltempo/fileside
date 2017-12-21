@@ -1,4 +1,4 @@
-![fileside Logo](https://www.marcobeltempo.com/wp-content/uploads/2017/12/filesidelogo.png)
+![fileside Logo](https://www.marcobeltempo.com/wp-content/uploads/2017/12/fileside_logo.svg)
 
 [![Try fileside on RunKit](https://badge.runkitcdn.com/fileside.svg)](https://npm.runkit.com/fileside)
 [![Build Status](https://travis-ci.org/marcobeltempo/fileside.svg?branch=master)](https://travis-ci.org/marcobeltempo/fileside)
