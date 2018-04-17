@@ -3,7 +3,7 @@ var express = require("express");
 var router = express.Router();
 var fileside = require("../src/fileside.js");
 var multer = require("multer");
-var upload = multer({ dest: "../uploads/" });
+var upload = multer({ dest: "./uploads" });
 
 var testFilePath = "./test/test_file.txt";
 var algorithms = ["md5", "sha1", "sha256", "sha512"];
@@ -46,19 +46,30 @@ router.get("/", function(req, res, next) {
   arr1 = [];
 });
 
-router.post("/upload", upload.single("userFile"), function(req, res, next) {
+router.post("/upload/", upload.single("userFile"), function(req, res, next) {
   var userMessage = "";
+  var fileType = req.file.originalname.match(/\..*$/);
+  var fileDir = req.file.path;
+  console.log(fileDir);
   if (req.file) {
-    userMessage = "File successfully recieved";
+    fileside.getFileKb(fileDir, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      arr1.push(result);
+      console.log(result);
+    });
+    res.render("index", {
+      title: "Fileside",
+      stats: arr1
+    });
+    arr1 = [];
   } else {
     userMessage = "File was not recieved";
+    res.render("upload", {
+      message: userMessage
+    });
   }
-  res.render("upload", {
-    title: "Fileside",
-    stats: arr1,
-    message: userMessage
-  });
-  arr1 = [];
 });
 
 router.get("/upload", function(req, res, next) {
