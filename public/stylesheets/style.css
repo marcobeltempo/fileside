@@ -21,7 +21,7 @@ h1, h3 {
 #output {
   background-color: #fff;
   display: block;
-  border: 5px, solid, green;
+  border: 5px solid rgb(14, 148, 189);
 }
 
 #fileStats {

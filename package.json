@@ -3,14 +3,14 @@
   "version": "0.1.2",
   "scripts": {
     "start": "node ./src/fileside",
-    "start:dev": "node ./bin/www",
+    "start:dev": "nodemon ./bin/www",
     "test": "run-p -n test:lint test:jest",
     "test:jest": "jest",
     "test:lint": "eslint .",
     "test:lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "npm-run-all": "^4.1.2"
+    "npm-run-all": "^4.1.2",
   },
   "description": "Application to retrieve file size, and produce a file hash.",
   "main": "./src/fileside.js",
