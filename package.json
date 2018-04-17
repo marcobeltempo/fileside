@@ -10,7 +10,7 @@
     "test:lint:fix": "eslint . --fix"
   },
   "dependencies": {
-    "npm-run-all": "^4.1.2",
+    "npm-run-all": "^4.1.2"
   },
   "description": "Application to retrieve file size, and produce a file hash.",
   "main": "./src/fileside.js",

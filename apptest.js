@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 
-var redis = require('redis');
+var redis = require("redis");
 var client = redis.createClient();
 // Shim implementation of the redis client, in case we can't get one.
 var fakeRedisClient = (function() {
@@ -17,18 +17,18 @@ var fakeRedisClient = (function() {
       callback(null, emptyKeyList);
     }
   };
-}());
+})();
 
 // Only use cache if redis is present
-client.on('error', function(err) {
-  console.warn('[redis cleint error]', err);
+client.on("error", function(err) {
+  console.warn("[redis cleint error]", err);
   // Swap out for the fake shim client instead.
   client = fakeRedisClient;
 });
 
 // Namespace for all redis keys in the cache
-var KEY_PREFIX = 'learntravis:';
-// Set cache time-to-live value, using environment variable or default of 1 min. 
+var KEY_PREFIX = "learntravis:";
+// Set cache time-to-live value, using environment variable or default of 1 min.
 var ONE_MINUTE = 1 * 60;
 var CACHE_TIMEOUT_SECONDS = process.env.CACHE_TIMEOUT_SECONDS || ONE_MINUTE;
 
@@ -38,7 +38,7 @@ function prefixKey(key) {
 }
 
 exports.set = function(key, val) {
-  if(!client) {
+  if (!client) {
     return;
   }
 
@@ -47,7 +47,7 @@ exports.set = function(key, val) {
 };
 
 exports.get = function(key, callback) {
-  if(!client) {
+  if (!client) {
     return callback(null, null);
   }
 
@@ -57,12 +57,12 @@ exports.get = function(key, callback) {
 
 // For testing, a way to clear all keys from the cache
 exports._clear = function(callback) {
-  if(!client) {
+  if (!client) {
     return callback(null, null);
   }
-  
-  client.keys(KEY_PREFIX + '*', function(err, keys) {
-    if(err) {
+
+  client.keys(KEY_PREFIX + "*", function(err, keys) {
+    if (err) {
       return callback(err);
     }
 
