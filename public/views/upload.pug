@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    h1 Fileside Upload Screen
+    h3 Upload a file to have it hashed
+    form(action="/upload", method="post" enctype="multipart/form-data")
+        input(type="file", name="userFile")
+        input(type="submit", value="Submit")
+    
+    h1 #{message}
