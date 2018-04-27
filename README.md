@@ -1,11 +1,11 @@
-![fileside Logo](https://www.marcobeltempo.com/wp-content/uploads/2017/12/filesidelogo.png)
+![fileside Logo](https://www.marcobeltempo.com/wp-content/uploads/2017/12/fileside_logo.svg)
 
 [![Try fileside on RunKit](https://badge.runkitcdn.com/fileside.svg)](https://npm.runkit.com/fileside)
 [![Build Status](https://travis-ci.org/marcobeltempo/fileside.svg?branch=master)](https://travis-ci.org/marcobeltempo/fileside)
 
 A NodeJS library designed to process local file size strings and hash a file. As of now fileside can only process local files but look to expand to additional features such as drag and drop support.
 
-This Node.JS moduke analyzes a local file and returns the following information:
+This Node.JS module analyzes a local file and returns the following information:
 * Filesize in kilobytes
 * Filesize in Bytes
 * Hash using md5, sha1, sha256, sha512

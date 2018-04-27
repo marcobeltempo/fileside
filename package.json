@@ -2,7 +2,7 @@
   "name": "fileside",
   "version": "0.1.2",
   "scripts": {
-    "start": "node ./bin/www",
+    "start": "nodemon ./bin/www",
     "test": "run-p -n test:lint test:jest",
     "test:jest": "jest",
     "test:lint": "eslint .",
