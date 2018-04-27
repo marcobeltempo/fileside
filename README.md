@@ -61,11 +61,11 @@ Setup fileside on your local machine
 1. `git clone https://github.com/marcobeltempo/fileside`
 2. `cd fileside`
 3. `npm install`
-4. `npm run start:dev` //(optional) This will load a test server to view the results of a test .txt file
+4. `npm start` // nodemon automatically rebuilds/restarts the server whenever a change is made
 5.  Navigate to http://localhost:3000/ to view the results
 
 ## Running the Test Suite
-* `npm start:dev` - launches a loalhost server and analayze and display the results of test_file.txt
+* `npm start` - localhost server displays the results of `test_file.txt`
 * `npm test` - performs an eslint + prettier and jest tests
 * `npm run test:lint:fix` - automatically fix any styling and validation errors. (Double check your changes)
 
